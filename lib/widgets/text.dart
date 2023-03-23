@@ -16,8 +16,9 @@ class TextArt extends StatelessWidget {
       text,
       style: TextStyle(
         color: textColor,
-        fontSize: 20,
+        fontSize: 25,
       ),
+      textAlign: TextAlign.end,
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:digital_education/screens/mouse_level.dart';
+import 'package:digital_education/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,9 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MouseScreen(),
+      home: MyWidget(),
     );
   }
 }

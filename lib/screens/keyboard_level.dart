@@ -48,8 +48,15 @@ class _KeyboardScreenState extends State<KeyboardScreen> {
             child: Form(
               key: formKey,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
+                  TextArt(
+                      text:
+                          "هيا معي يا أطفالي نتعلم جزء جديد من أجزاء الحاسوب.",
+                      textColor: AppColors.textColor),
+                  SizedBox(
+                    height: context.height * 0.1,
+                  ),
                   Center(
                     child: Container(
                         clipBehavior: Clip.hardEdge,
@@ -61,7 +68,7 @@ class _KeyboardScreenState extends State<KeyboardScreen> {
                     height: context.height * 0.03,
                   ),
                   Text(
-                    "This is Level 2 ",
+                    " : المستوي الثاني  ",
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                         color: AppColors.textColor,
                         fontSize: 20,
@@ -77,68 +84,91 @@ class _KeyboardScreenState extends State<KeyboardScreen> {
                   ),
                   TextArt(
                       text:
-                          "Whenever you need to type something in a program, email message, or text box, you'll see a blinking vertical line 'Picture of the cursor' called the cursor or insertion point. It shows where the text that you type will begin. You can move the cursor by clicking in the desired location with the mouse, or by using the navigation keys see the 'Using navigation keys' section of this article.",
+                          "هيا بنا نتعرف على الجزء الذي أمامنا يا أحبابي انها ليس قطعة ألعاب بل انها من أجزاء الحاسوب طفلي الشطور انها لوحة المفاتيح و سميت لوحة المفاتيح لان بها عدة مفاتيح مختلفه بعضها حروف و بعضها ارقام",
                       textColor: AppColors.textColor),
                   SizedBox(
                     height: context.height * 0.03,
                   ),
-                  TextArt(text: "", textColor: AppColors.backGround),
                   Center(
                     child: Lottie.asset("assets/animation/keyboard.json",
-                        height: context.height * 0.3, width: context.width * 0.5),
+                        height: context.height * 0.3,
+                        width: context.width * 0.5),
                   ),
                   SizedBox(
                     height: context.height * 0.03,
                   ),
                   TextArt(
                       text:
-                          "Keyboard shortcutsare ways to perform actions by using your keyboard. They're called shortcuts because they help you work faster. In fact, almost any action or command you can perform with a mouse can be performed faster using one or more keys on your keyboard.In Help topics, a plus sign '+' between two or more keys indicates that those keys should be pressed in combination. For example, Ctrl + A means to press and hold Ctrl and then press A. Ctrl + Shift + A means to press and hold Ctrl and Shift and then press A.",
+                          "الان انظروا الي لوحة المفاتيح الذي امامكم و تأكدوا من وجود الحروف و الارقام",
                       textColor: AppColors.textColor),
                   SizedBox(
                     height: context.height * 0.05,
                   ),
-                 TextArt(
-                        text: "- How to write something ?",
-                        textColor: AppColors.textColor),
-                    SizedBox(
-                      height: context.height * 0.02,
-                    ),
-                    defaultFormField(
-                        controller: anserController,
-                        type: TextInputType.text,
-                        validate: (String value) {
-                          if (value !=
-                              "click on letters button") {
-                            return "The answer is incorrect";
+                  Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20)),
+                      clipBehavior: Clip.hardEdge,
+                      child: Image.asset("assets/images/key2.jpg")),
+                  SizedBox(
+                    height: context.height * 0.03,
+                  ),
+                  TextArt(
+                      text:
+                          "و الان يا اطفالي سوف نتعرف على وظيفة لوحة المفاتيح و هي الكتابه على شاشة الحاسوب ",
+                      textColor: AppColors.textColor),
+                  SizedBox(
+                    height: context.height * 0.02,
+                  ),
+                  Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20)),
+                      clipBehavior: Clip.hardEdge,
+                      child: Image.asset("assets/images/key3.jpg")),
+                  SizedBox(
+                    height: context.height * 0.02,
+                  ),
+                  TextArt(
+                      text: "  ماهي مكونات لوحة المفاتيح ؟ - ",
+                      textColor: AppColors.textColor),
+                  SizedBox(
+                    height: context.height * 0.02,
+                  ),
+                  defaultFormField(
+                      controller: anserController,
+                      type: TextInputType.text,
+                      validate: (String value) {
+                        if (value != "الأرقام و الحروف") {
+                          return "الأجابة خاطئة";
+                        }
+                      },
+                      hint: "أدخل الأجابة"),
+                  SizedBox(
+                    height: context.height * 0.02,
+                  ),
+                  Center(
+                    child: MainButton(
+                        text: "إدخال",
+                        width: context.width * 0.8,
+                        height: context.height * 0.1,
+                        onTap: () {
+                          if (formKey.currentState!.validate()) {
+                            setState(() {
+                              showContainer = true;
+                              navigateAndFinish(
+                                  context, const DesktopEnterFace());
+                            });
                           }
                         },
-                        hint: "Enter answer"),
-                    SizedBox(
-                      height: context.height * 0.02,
+                        backGround: AppColors.primary,
+                        textColor: AppColors.textColor,
+                        fontSize: 20),
+                  ),
+                  Center(
+                    child: Lottie.asset(
+                      "assets/animation/congrts.json",
+                      height: showContainer ? 200 : 0,
                     ),
-                    Center(
-                      child: MainButton(
-                          text: "Submit",
-                          width: context.width * 0.8,
-                          height: context.height * 0.1,
-                          onTap: () {
-                            if (formKey.currentState!.validate()) {
-                              setState(() {
-                                showContainer = true;
-                                navigateAndFinish(context, const DesktopEnterFace());
-                              });
-                            }
-                          },
-                          backGround: AppColors.primary,
-                          textColor: AppColors.textColor,
-                          fontSize: 20),
-                    ),
-                    Center(
-                      child: Lottie.asset(
-                        "assets/animation/congrts.json",
-                        height: showContainer ? 200 : 0,
-                      ),
-                    )
+                  )
                 ],
               ),
             ),

@@ -25,7 +25,10 @@ Widget defaultFormField({
           Expanded(
             child: TextFormField(
               cursorColor: AppColors.textColor,
-              style: TextStyle(color: AppColors.textColor),
+              style: TextStyle(
+                color: AppColors.textColor,
+              ),
+              textAlign: TextAlign.end,
               readOnly: widget == null ? false : true,
               controller: controller,
               keyboardType: type,
@@ -42,14 +45,14 @@ Widget defaultFormField({
                     borderSide: BorderSide(color: AppColors.textColor),
                     borderRadius: BorderRadius.circular(15)),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: AppColors.textColor, width: 2.0),
+                  borderSide:
+                      BorderSide(color: AppColors.textColor, width: 2.0),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 errorBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: AppColors.errorRed, width: 2.0),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
-                
                 hintText: hint,
                 prefixIcon: Icon(
                   prefix,

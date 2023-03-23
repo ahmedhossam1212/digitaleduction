@@ -35,6 +35,7 @@ dependencies:
   lottie: ^2.0.0
   flutter_launcher_icons: ^0.11.0
   flutter_svg: ^1.1.6
+  animations: ^2.0.7
    
    
 

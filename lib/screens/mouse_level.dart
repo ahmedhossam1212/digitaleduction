@@ -24,11 +24,15 @@ class _MouseScreenState extends State<MouseScreen> {
     return Scaffold(
       backgroundColor: AppColors.backGround,
       appBar: AppBar(
+        leading: Icon(
+          Icons.abc,
+          color: AppColors.backGround,
+        ),
         centerTitle: true,
         elevation: 0.0,
         backgroundColor: AppColors.backGround,
         title: Text(
-          "Mouse",
+          "الفأرة",
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               fontSize: 25,
               fontWeight: FontWeight.w600,
@@ -41,12 +45,12 @@ class _MouseScreenState extends State<MouseScreen> {
           child: Padding(
             padding: EdgeInsets.only(
                 top: context.height * 0.05,
-                right: context.width * 0.05,
-                left: context.width * 0.05),
-            child: Form( 
+                right: context.width * 0.09,
+                left: context.width * 0.09),
+            child: Form(
               key: formKey,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Center(
                     child: Container(
@@ -63,33 +67,34 @@ class _MouseScreenState extends State<MouseScreen> {
                     height: context.height * 0.03,
                   ),
                   Text(
-                    "This is Level 1",
+                    " : المستوي الأول ",
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                         color: AppColors.textColor,
                         fontWeight: FontWeight.bold,
-                        fontSize: 20),
+                        fontSize: 30),
                   ),
                   Container(
                     color: AppColors.textColor,
-                    width: context.width * 0.35,
+                    width: context.width * 0.48,
                     height: 2,
                   ),
                   SizedBox(
                     height: context.height * 0.03,
                   ),
                   Text(
-                    "A computer mouse is a handheld pointing device and input device used with all desktop computers that moves the mouse pointer on the screen. To help with portability, mobile devices, like a laptop, use a touchpad instead of a mouse. Mobile devices, like a smartphone and tablet, use a touch screen for their pointer input. This page is designed to help new computer users become more familiar and efficient with a desktop computer mouse.",
+                    "الفأرة هي إحدى وحدات الإدخال في الحاسوب التي تُستعمل يدوياً للتأشير والنقر في الواجهة الرسومية",
                     style: Theme.of(context)
                         .textTheme
                         .bodyMedium
-                        ?.copyWith(color: AppColors.textColor, fontSize: 20),
+                        ?.copyWith(color: AppColors.textColor, fontSize: 25),
+                    textAlign: TextAlign.end,
                   ),
                   SizedBox(
                     height: context.height * 0.03,
                   ),
                   TextArt(
                     text:
-                        "- If you want open something move mouse pointer to it and left double click on it  ",
+                        " إذا كنت تريد فتح شيء ما ، حرك مؤشر الماوس إليه ثم انقر فوقه نقرًا مزدوجًا",
                     textColor: AppColors.textColor,
                   ),
                   SizedBox(
@@ -107,7 +112,8 @@ class _MouseScreenState extends State<MouseScreen> {
                     height: context.height * 0.03,
                   ),
                   TextArt(
-                    text: "- If you want open options tap left click on anything",
+                    text:
+                        "إذا كنت تريد فتح الخيارات ، فانقر بزر الماوس الأيسر فوق أي شيء",
                     textColor: AppColors.textColor,
                   ),
                   SizedBox(
@@ -115,7 +121,7 @@ class _MouseScreenState extends State<MouseScreen> {
                   ),
                   TextArt(
                     text:
-                        "- If you want scroll just scrolling mouse scroll in the middle",
+                        "إذا كنت تريد التمرير فقط قم بالتمرير بالماوس في المنتصف",
                     textColor: AppColors.textColor,
                   ),
                   SizedBox(
@@ -128,7 +134,7 @@ class _MouseScreenState extends State<MouseScreen> {
                     height: context.height * 0.1,
                   ),
                   TextArt(
-                      text: "- How to open something ?",
+                      text: " كيفية فتح شيء ما؟ ",
                       textColor: AppColors.textColor),
                   SizedBox(
                     height: context.height * 0.02,
@@ -137,31 +143,31 @@ class _MouseScreenState extends State<MouseScreen> {
                       controller: anserController,
                       type: TextInputType.text,
                       validate: (String value) {
-                        if (value !=
-                            "double click on that thing") {
-                          return "The answer is incorrect";
+                        if (value != "انقر نقرا مزدوجا فوقه") {
+                          return "الأجابة خاطئة";
                         }
                       },
-                      hint: "Enter answer"),
+                      hint: "أدخل الأجابة"),
                   SizedBox(
                     height: context.height * 0.02,
                   ),
                   Center(
                     child: MainButton(
-                        text: "Submit",
+                        text: "إدخال",
                         width: context.width * 0.8,
                         height: context.height * 0.1,
                         onTap: () {
                           if (formKey.currentState!.validate()) {
                             setState(() {
                               showContainer = true;
-                              navigateAndFinish(context, const KeyboardScreen());
+                              navigateAndFinish(
+                                  context, const KeyboardScreen());
                             });
                           }
                         },
                         backGround: AppColors.primary,
                         textColor: AppColors.textColor,
-                        fontSize: 20),
+                        fontSize: 30),
                   ),
                   Center(
                     child: Lottie.asset(

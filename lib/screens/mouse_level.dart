@@ -52,6 +52,12 @@ class _MouseScreenState extends State<MouseScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
+                  TextArt(
+                      text: "هيا معي يا أطفالي نتعلم جزء جديد من أجزاء الحاسوب",
+                      textColor: AppColors.textColor),
+                  SizedBox(
+                    height: context.height * 0.1,
+                  ),
                   Center(
                     child: Container(
                         width: context.width * 0.8,
@@ -82,20 +88,12 @@ class _MouseScreenState extends State<MouseScreen> {
                     height: context.height * 0.03,
                   ),
                   Text(
-                    "الفأرة هي إحدى وحدات الإدخال في الحاسوب التي تُستعمل يدوياً للتأشير والنقر في الواجهة الرسومية",
+                    "هيا بنا نتعرف علي الجزء الذي امامنا ي اطفالي انها الفأرة ",
                     style: Theme.of(context)
                         .textTheme
                         .bodyMedium
                         ?.copyWith(color: AppColors.textColor, fontSize: 25),
                     textAlign: TextAlign.end,
-                  ),
-                  SizedBox(
-                    height: context.height * 0.03,
-                  ),
-                  TextArt(
-                    text:
-                        " إذا كنت تريد فتح شيء ما ، حرك مؤشر الماوس إليه ثم انقر فوقه نقرًا مزدوجًا",
-                    textColor: AppColors.textColor,
                   ),
                   SizedBox(
                     height: context.height * 0.03,
@@ -113,19 +111,11 @@ class _MouseScreenState extends State<MouseScreen> {
                   ),
                   TextArt(
                     text:
-                        "إذا كنت تريد فتح الخيارات ، فانقر بزر الماوس الأيسر فوق أي شيء",
+                        "سميت بهذا الاسم يا احبابي لانها تشبه الفأر الحقيقي في شكلها فقط و الفأرة مكونه من زر ايمن و زر ايسر و سلك يوصلها بجهاز الكمبيوتر تستخدم الفأرة في تحريك السهم الظاهر على شاشة الحاسوب و الرسم و التلوين ",
                     textColor: AppColors.textColor,
                   ),
                   SizedBox(
                     height: context.height * 0.06,
-                  ),
-                  TextArt(
-                    text:
-                        "إذا كنت تريد التمرير فقط قم بالتمرير بالماوس في المنتصف",
-                    textColor: AppColors.textColor,
-                  ),
-                  SizedBox(
-                    height: context.height * 0.03,
                   ),
                   Lottie.asset(
                     "assets/animation/scroll.json",
@@ -134,7 +124,8 @@ class _MouseScreenState extends State<MouseScreen> {
                     height: context.height * 0.1,
                   ),
                   TextArt(
-                      text: " كيفية فتح شيء ما؟ ",
+                      text:
+                          "هيا اخبرني يا شطور ما اسم الجزء الذي تعرفنا عليه اليوم ؟",
                       textColor: AppColors.textColor),
                   SizedBox(
                     height: context.height * 0.02,
@@ -143,9 +134,10 @@ class _MouseScreenState extends State<MouseScreen> {
                       controller: anserController,
                       type: TextInputType.text,
                       validate: (String value) {
-                        if (value != "انقر نقرا مزدوجا فوقه") {
+                        if (value != "الفأرة") {
                           return "الأجابة خاطئة";
                         }
+                       
                       },
                       hint: "أدخل الأجابة"),
                   SizedBox(

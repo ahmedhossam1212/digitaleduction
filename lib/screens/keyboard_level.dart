@@ -28,7 +28,7 @@ class _KeyboardScreenState extends State<KeyboardScreen> {
         elevation: 0.0,
         backgroundColor: AppColors.backGround,
         title: Text(
-          "Keyboard",
+          "لوحة المفاتيح",
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               fontSize: 25,
               fontWeight: FontWeight.w600,
@@ -141,7 +141,7 @@ class _KeyboardScreenState extends State<KeyboardScreen> {
                           return "الأجابة خاطئة";
                         }
                       },
-                      hint: "أدخل الأجابة"),
+                      hint: " الأجابة"),
                   SizedBox(
                     height: context.height * 0.02,
                   ),

@@ -139,7 +139,7 @@ class _MouseScreenState extends State<MouseScreen> {
                         }
                        
                       },
-                      hint: "أدخل الأجابة"),
+                      hint: " الأجابة"),
                   SizedBox(
                     height: context.height * 0.02,
                   ),

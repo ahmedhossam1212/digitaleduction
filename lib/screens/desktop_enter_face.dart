@@ -48,7 +48,7 @@ class _DesktopEnterFaceState extends State<DesktopEnterFace> {
           child: Form(
             key: formKey,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 TextArt(
                     text:

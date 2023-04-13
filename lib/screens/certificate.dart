@@ -59,7 +59,7 @@ class _CertificateScreenState extends State<CertificateScreen> {
                           ),
                           Center(
                             child: Text(
-                              "${nameController.text}:عزيزي ",
+                              " عزيزي: ${nameController.text}",
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyMedium!

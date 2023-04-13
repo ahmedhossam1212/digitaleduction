@@ -1,12 +1,15 @@
+import 'package:digital_education/screens/certificate.dart';
 import 'package:digital_education/utils/app_colors.dart';
 import 'package:digital_education/utils/media_query_values.dart';
 import 'package:digital_education/widgets/form_fields.dart';
 import 'package:digital_education/widgets/main_button.dart';
+import 'package:digital_education/widgets/routs.dart';
 import 'package:digital_education/widgets/text.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class MicroSoftScreen extends StatefulWidget {
   const MicroSoftScreen({super.key});
@@ -19,6 +22,20 @@ class _MicroSoftScreenState extends State<MicroSoftScreen> {
   TextEditingController anserController = TextEditingController();
   var formKey = GlobalKey<FormState>();
   bool showContainer = false;
+  final videoURL = "https://youtu.be/7omQ4QtvNGQ?list=PLuLbIQFOxjf7ejPyXOMqEREf3f2QxOPRb";
+  
+  late YoutubePlayerController _controller;
+   @override
+  void initState() {
+     final videoID = YoutubePlayer.convertUrlToId(videoURL);
+     _controller = YoutubePlayerController(initialVideoId: videoID!,
+     flags: const YoutubePlayerFlags(
+      autoPlay: false,
+     )
+     );
+     
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,6 +82,32 @@ class _MicroSoftScreenState extends State<MicroSoftScreen> {
                 SizedBox(
                   height: context.height * 0.04,
                 ),
+                 YoutubePlayer( 
+                          progressColors: const ProgressBarColors(playedColor: Colors.red),
+                          controller: _controller,
+                         showVideoProgressIndicator: true,
+                        
+                          bottomActions: [
+                            
+                            CurrentPosition(),
+                            ProgressBar(
+                              isExpanded: true,
+                              colors: const ProgressBarColors(
+                                handleColor: Colors.red,
+                                playedColor: Colors.red,
+                                
+
+                              ),
+                            )
+
+                          ],
+                          
+                         
+                         ),
+
+                  SizedBox(
+                    height: context.height * 0.03,
+                  ),
                 Text(
                   "المستوي الرابع",
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
@@ -172,10 +215,10 @@ class _MicroSoftScreenState extends State<MicroSoftScreen> {
                     type: TextInputType.text,
                     validate: (String value) {
                       if (value != "word") {
-                        return "The answer is incorrect";
+                        return "الاجابة خاطئة";
                       }
                     },
-                    hint: "Enter answer"),
+                    hint: "الاجابة "),
                 SizedBox(
                   height: context.height * 0.02,
                 ),
@@ -188,6 +231,7 @@ class _MicroSoftScreenState extends State<MicroSoftScreen> {
                           if (formKey.currentState!.validate()) {
                             setState(() {
                               showContainer = true;
+                              navigateTo(context, const CertificateScreen());
                              
                             });
                           }

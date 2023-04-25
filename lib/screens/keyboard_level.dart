@@ -195,7 +195,7 @@ class _KeyboardScreenState extends State<KeyboardScreen> {
                           if (formKey.currentState!.validate()) {
                             setState(() {
                               showContainer = true;
-                              navigateAndFinish(
+                              navigateTo(
                                   context, const DesktopEnterFace());
                             });
                           }

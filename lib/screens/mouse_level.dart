@@ -195,8 +195,8 @@ class _MouseScreenState extends State<MouseScreen> {
                           if (formKey.currentState!.validate()) {
                             setState(() {
                               showContainer = true;
-                              navigateAndFinish(
-                                  context, const KeyboardScreen());
+                              navigateTo(
+                                  context,  const KeyboardScreen());
                             });
                           }
                         },

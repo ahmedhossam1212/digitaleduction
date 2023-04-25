@@ -20,7 +20,7 @@ class _DesktopEnterFaceState extends State<DesktopEnterFace> {
   TextEditingController anserController = TextEditingController();
   var formKey = GlobalKey<FormState>();
   bool showContainer = false;
-  
+
   final videoURL = "https://youtu.be/oSymPJW4PME?list=PLuLbIQFOxjf7ejPyXOMqEREf3f2QxOPRb";
   
   late YoutubePlayerController _controller;
@@ -231,7 +231,7 @@ class _DesktopEnterFaceState extends State<DesktopEnterFace> {
                         if (formKey.currentState!.validate()) {
                           setState(() {
                             showContainer = true;
-                            navigateAndFinish(context, const MicroSoftScreen());
+                            navigateTo(context, const MicroSoftScreen());
                           });
                         }
                       },

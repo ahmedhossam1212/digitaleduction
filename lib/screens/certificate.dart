@@ -20,7 +20,8 @@ class _CertificateScreenState extends State<CertificateScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.backGround,
-      appBar: AppBar(
+      appBar: AppBar( 
+        
         centerTitle: true,
         title: Text(
           "Certificate",
